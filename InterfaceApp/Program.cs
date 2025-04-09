@@ -23,6 +23,16 @@ namespace InterfaceApp
             Console.WriteLine(salesMan1.DepartmentName);
             Console.WriteLine(salesMan1.GetHealthInsuranceAmount());
             Console.WriteLine("-----------------------");
+
+            // Dynamic Polymorphism through interface (runtime polymorphism)
+            IEmployee emp;
+            emp = mgr1;
+            Console.WriteLine(emp.GetHealthInsuranceAmount());
+            Console.WriteLine("-----------------------");
+
+            emp = salesMan1;
+            Console.WriteLine(emp.GetHealthInsuranceAmount());
+            Console.WriteLine("-----------------------");
         }
     }
 }
