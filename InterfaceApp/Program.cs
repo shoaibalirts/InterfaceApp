@@ -33,6 +33,11 @@ namespace InterfaceApp
             emp = salesMan1;
             Console.WriteLine(emp.GetHealthInsuranceAmount());
             Console.WriteLine("-----------------------");
+
+            IPerson person = mgr1;
+            person.DateOfBirth = System.Convert.ToDateTime("1983-06-08");
+            Console.WriteLine(person.GetAge());
+
         }
     }
 }

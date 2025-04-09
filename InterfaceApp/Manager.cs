@@ -1,11 +1,24 @@
 ﻿namespace InterfaceApp
 {
-    public class Manager : IEmployee
+    public class Manager : IEmployee, IPerson
     {
         private int _empId;
         private string _empName;
         private string _location;
         private string _departmentName;
+        private System.DateTime _dateOfBirth;
+
+        public System.DateTime DateOfBirth
+        {
+            set
+            {
+                _dateOfBirth = value;
+            }
+            get
+            {
+                return _dateOfBirth;
+            }
+        }
         public int EmpId
         {
             set
@@ -66,6 +79,12 @@
         public string GetHealthInsuranceAmount()
         {
             return "Additional health insurance amount is: 1000";
+        }
+
+        public int GetAge()
+        {
+            int a = System.Convert.ToInt32((System.DateTime.Now - DateOfBirth).TotalDays / 365);
+            return a;
         }
 
 
