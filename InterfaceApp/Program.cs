@@ -1,15 +1,28 @@
-﻿namespace InterfaceApp
+﻿using System;
+
+namespace InterfaceApp
 {
-    public interface Employee
-    {
-        // interface can contain only abstract methods
-
-    }
-
     public class Program
     {
         public static void Main(string[] args)
         {
+            Manager mgr1 = new Manager(102, "Allen", "New York", "Accounting");
+            Console.WriteLine("Object of child class (Manager)");
+            Console.WriteLine(mgr1.EmpId);
+            Console.WriteLine(mgr1.EmpName);
+            Console.WriteLine(mgr1.Location);
+            Console.WriteLine(mgr1.DepartmentName);
+            Console.WriteLine(mgr1.GetHealthInsuranceAmount());
+            Console.WriteLine("-----------------------");
+
+            SalesMan salesMan1 = new SalesMan(103, "John", "Washington", "East");
+            Console.WriteLine("Object of child class (SalesMan)");
+            Console.WriteLine(salesMan1.EmpId);
+            Console.WriteLine(salesMan1.EmpName);
+            Console.WriteLine(salesMan1.Location);
+            Console.WriteLine(salesMan1.DepartmentName);
+            Console.WriteLine(salesMan1.GetHealthInsuranceAmount());
+            Console.WriteLine("-----------------------");
         }
     }
 }
