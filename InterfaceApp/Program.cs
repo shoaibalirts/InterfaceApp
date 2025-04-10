@@ -1,5 +1,5 @@
-﻿using System;
-using HR;
+﻿using HR;
+using static System.Console;
 namespace InterfaceApp
 {
     public class Program
@@ -7,36 +7,36 @@ namespace InterfaceApp
         public static void Main(string[] args)
         {
             Manager mgr1 = new Manager(102, "Allen", "New York", "Accounting");
-            Console.WriteLine("Object of child class (Manager)");
-            Console.WriteLine(mgr1.EmpId);
-            Console.WriteLine(mgr1.EmpName);
-            Console.WriteLine(mgr1.Location);
-            Console.WriteLine(mgr1.DepartmentName);
-            Console.WriteLine(mgr1.GetHealthInsuranceAmount());
-            Console.WriteLine("-----------------------");
+            WriteLine("Object of child class (Manager)");
+            WriteLine(mgr1.EmpId);
+            WriteLine(mgr1.EmpName);
+            WriteLine(mgr1.Location);
+            WriteLine(mgr1.DepartmentName);
+            WriteLine(mgr1.GetHealthInsuranceAmount());
+            WriteLine("-----------------------");
 
             SalesMan salesMan1 = new HR.SalesMan(103, "John", "Washington", "East");
-            Console.WriteLine("Object of child class (SalesMan)");
-            Console.WriteLine(salesMan1.EmpId);
-            Console.WriteLine(salesMan1.EmpName);
-            Console.WriteLine(salesMan1.Location);
-            Console.WriteLine(salesMan1.DepartmentName);
-            Console.WriteLine(salesMan1.GetHealthInsuranceAmount());
-            Console.WriteLine("-----------------------");
+            WriteLine("Object of child class (SalesMan)");
+            WriteLine(salesMan1.EmpId);
+            WriteLine(salesMan1.EmpName);
+            WriteLine(salesMan1.Location);
+            WriteLine(salesMan1.DepartmentName);
+            WriteLine(salesMan1.GetHealthInsuranceAmount());
+            WriteLine("-----------------------");
 
             // Dynamic Polymorphism through interface (runtime polymorphism)
             IEmployee emp;
             emp = mgr1;
-            Console.WriteLine(emp.GetHealthInsuranceAmount());
-            Console.WriteLine("-----------------------");
+            WriteLine(emp.GetHealthInsuranceAmount());
+            WriteLine("-----------------------");
 
             emp = salesMan1;
-            Console.WriteLine(emp.GetHealthInsuranceAmount());
-            Console.WriteLine("-----------------------");
+            WriteLine(emp.GetHealthInsuranceAmount());
+            WriteLine("-----------------------");
 
             IPerson person = mgr1;
             person.DateOfBirth = System.Convert.ToDateTime("1983-06-08");
-            Console.WriteLine(person.GetAge());
+            WriteLine(person.GetAge());
 
         }
     }
