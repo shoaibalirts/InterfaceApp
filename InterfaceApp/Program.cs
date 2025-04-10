@@ -1,5 +1,5 @@
 ﻿using System;
-
+using HR;
 namespace InterfaceApp
 {
     public class Program
@@ -15,7 +15,7 @@ namespace InterfaceApp
             Console.WriteLine(mgr1.GetHealthInsuranceAmount());
             Console.WriteLine("-----------------------");
 
-            SalesMan salesMan1 = new SalesMan(103, "John", "Washington", "East");
+            SalesMan salesMan1 = new HR.SalesMan(103, "John", "Washington", "East");
             Console.WriteLine("Object of child class (SalesMan)");
             Console.WriteLine(salesMan1.EmpId);
             Console.WriteLine(salesMan1.EmpName);
